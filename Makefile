@@ -18,3 +18,6 @@ bash:
 
 start:
 	${DOCKER_CMD} python api/app.py
+
+test:
+	${DOCKER_CMD} pytest tests
