@@ -6,6 +6,7 @@ from flask import Flask
 from flask_caching import Cache
 
 
+# configure app
 app = Flask(__name__)
 
 dotenv_path = os.path.join(os.getcwd(), '.env')
@@ -15,6 +16,13 @@ if os.path.isfile(dotenv_path):
 
 app.config.from_object(os.environ.get('CONFIG_OBJECT'))
 
+# config redis
+cache = Cache(app, config={
+    'CACHE_TYPE': os.environ.get('CACHE_TYPE'),
+    'CACHE_REDIS_URL': os.environ.get('REDIS_URL')
+})
+
+# config log handler
 handler = logging.StreamHandler(sys.stdout)
 
 if not app.debug:

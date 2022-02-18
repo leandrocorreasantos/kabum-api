@@ -1,6 +1,14 @@
 import os
 import json
 from api import app as application
+from api.v1.resources import CalculaFreteView as v1_Frete
+
+
+application.add_url_rule(
+    '/v1/frete',
+    view_func=v1_Frete.as_view('frete'),
+    methods=['POST']
+)
 
 
 @application.route('/')

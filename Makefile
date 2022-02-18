@@ -4,6 +4,7 @@ build:
 	docker-compose up -d
 
 upgrade-pip:
+	[ -f .env ] || cp .env.sample .env
 	${DOCKER_CMD} pip install --upgrade pip
 
 setup: upgrade-pip
@@ -17,4 +18,3 @@ bash:
 
 start:
 	${DOCKER_CMD} python api/app.py
-

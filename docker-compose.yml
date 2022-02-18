@@ -9,6 +9,8 @@ services:
         working_dir: /home/application/current
         ports:
             - "5001:5000"
+        depends_on:
+            - cache
         command: tail -f /dev/null
         networks:
             - app-network
