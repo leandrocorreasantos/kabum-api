@@ -8,10 +8,13 @@ from api.v1.schema import (
     EmptyDataSchema,
     ValidationErrorSchema,
 )
+from flasgger.utils import swag_from
 
 
 class CalculaFreteView(MethodView):
+    @swag_from('/swagger/frete.yml')
     def post(self):
+
         schema = FreteSchema()
         schema.many = True
         data = request.get_json()

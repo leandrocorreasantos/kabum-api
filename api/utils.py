@@ -1,5 +1,6 @@
 from api import log
 
+
 config_frete = [
     {
         'codigo': 'ninja',
