@@ -1,5 +1,5 @@
 import os
-import json
+from flask import jsonify
 from api import app as application
 from api.v1.resources import CalculaFreteView as v1_Frete
 
@@ -13,7 +13,7 @@ application.add_url_rule(
 
 @application.route('/')
 def index():
-    return json.dumps({'message': 'KABUM!'})
+    return jsonify({'message': 'KABUM!'})
 
 
 if __name__ == '__main__':

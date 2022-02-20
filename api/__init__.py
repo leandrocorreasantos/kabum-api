@@ -4,10 +4,12 @@ import logging
 import logging.config
 from flask import Flask
 from flask_caching import Cache
+from flasgger import Swagger
 
 
 # configure app
 app = Flask(__name__)
+swagger = Swagger(app)
 
 dotenv_path = os.path.join(os.getcwd(), '.env')
 if os.path.isfile(dotenv_path):

@@ -1,0 +1,44 @@
+summary: "Calcula Frete"
+description: "Calcula o frete do produto baseado no peso e nas medidas do pacote"
+consumes:
+    - "application/json"
+definitions:
+    PackageData:
+        type: object
+        properties:
+            dimensao:
+                type: object
+                properties:
+                    largura:
+                        type: number
+                        default: 30
+                    altura:
+                        type: number
+                        default: 30
+            peso:
+                type: number
+                default: 400
+    Frete:
+        properties:
+            nome:
+                type: string
+            valor_frete:
+                type: number
+            prazo_entrega:
+                type: number
+
+parameters:
+  - name: body
+    in: body
+    type: string
+    required: true
+    schema:
+        $ref: '#/definitions/PackageData'
+
+responses:
+    200:
+        description: Dados do frete
+        schema:
+            $ref: '#/definitions/Frete'
+    400:
+        description: Bad Request

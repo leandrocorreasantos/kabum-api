@@ -5,4 +5,5 @@ python-dotenv==0.10.3
 marshmallow==3.5.2
 redis==4.1.4
 flask_caching==1.10.1
+flasgger
 -e .
