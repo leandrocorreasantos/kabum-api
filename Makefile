@@ -21,3 +21,6 @@ start:
 
 test:
 	${DOCKER_CMD} pytest tests
+
+destroy:
+	docker-compose down
