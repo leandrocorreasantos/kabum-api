@@ -1,5 +1,7 @@
 # kabum-api
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cdd2f5a7d8b24d478cbdd95e71603178)](https://app.codacy.com/gh/leandrocorreasantos/kabum-api?utm_source=github.com&utm_medium=referral&utm_content=leandrocorreasantos/kabum-api&utm_campaign=Badge_Grade_Settings)
+
 API para cálculo de frete desenvolvido para **KaBuM**.
 
 ## Instalação
